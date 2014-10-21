@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link href="../labs.ico" rel="shortcut icon" type="image/x-icon">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Connector - Labs @ Atulmy.com</title>
+	<meta name="description" content="Draw a connecter(path) between two HTML element using HTML5 + CSS3 + Javascript"/>
+	<meta name="keywords" content="html5, css, css3, javascript, jquery, connector, html5 css javascript connector, path, draw, trace, connect two elements, connect two div"/>
+
+<!-- Meta Tags OG -->
+	<meta property="og:type" content="website"/>
+	<meta property="og:title" content="Connector - Labs @ Atulmy.com"/>
+	<meta property="og:url" content="http://atulmy.com/labs/connector/index_html5.html"/>
+	<meta property="og:image" content="http://atulmy.com/labs/connector/images/connector_html5.jpg"/>
+	<meta property="og:description" content="Draw a connecter (path) between two HTML element using HTML5 + CSS3 + Javascript"/>
+	<meta property="og:site_name" content="http://atulmy.com/"/>
+	
+	<!-- Jquery 2.0 -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<!-- Connector JS Plugin -->
+	<script src="jquery.connector_html5.js"></script>
+	
+	<style>
+		* {
+			margin: 0px;
+			padding: 0px;
+			-webkit-transition:all .30s linear;
+			-moz-transition:all .30s linear;
+			transition:all .30s linear;
+		}
+		html, body { 
+			background: #fafafa;
+			font-family: georgia;
+			font-size: 100%;
+		}
+		a, a:visited { color:#fff; text-decoration : none; outline:none;}
+		a:hover { color:#fff; text-decoration : underline; outline:none;}
+		h4 span { font-weight: normal; }
+		#header {
+			height: 30px;
+			width: 100%;
+			background-color: #000;
+			clear: both;
+			border-bottom: 1px solid #666666;
+			color: #fff;
+			font-family: arial;
+			position: fixed;
+			z-index: 999;
+		}
+		#header a, #header strong {
+			float: left;
+			padding: 5px;
+			color: #fff;
+		}
+		
+		/* Connector CSS Code Start */
+		#container {
+			overflow: hidden;
+			width: 1125px;
+			height: 535px;
+		}
+		.dot {
+			width: 5px;
+			height: 5px;
+			background: #ddd;
+			position: absolute;
+			border-radius: 5px;
+			z-index: 1;
+		}
+		.box {
+			width: 220px;
+			height: 220px;
+			background: #fff url('images/atulmy.jpg') no-repeat center;
+			position: absolute;
+			box-shadow: 0px 0px 10px #aaa;
+			border-radius: 110px;
+			z-index: 2;
+			overflow: hidden;
+		}
+		.box_description {
+			color: #FFFFFF;
+			height: 70px;
+			margin-left: 8px;
+			margin-top: 150px;
+			text-align: center;
+			text-shadow: 0 0 5px #000000;
+			width: 205px;
+		}
+		.box_description .name {
+			padding: 3px 25px;
+			font-size: 1.2rem;
+			clear: both;
+		}
+		.box_description .designation {
+			border-radius: 5px 5px 5px 5px;
+			clear: both;
+			color: #EEEEEE;
+			font-size: 0.8rem;
+			font-weight: bold;
+		}
+		/* Connector CSS Code End */
+	</style>
+	<script>
+		$( function() {
+			$('#container').connector({
+				connectFrom: '#box1', 
+				connectTo: '#box2',
+				connectColor: '#ccc',
+				connectSize: 5
+			});
+			$('#container').connector({
+				connectFrom: '#box1', 
+				connectTo: '#box3'
+			});
+			$('#container').connector({
+				connectFrom: '#box1', 
+				connectTo: '#box4',
+				connectSize: 3
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="header">
+		<strong style="float: left; margin-right: 10px;">Connectors</strong>
+		<a href="index.html" class="links">Using HTML</a>
+		<strong style="float: left;">•</strong>
+		<a href="index_html5.html" class="links">Using HTML5 Canvas</a>
+		<strong style="float: left;">•</strong>
+		<a href="http://atulmy.com/labs/connector/connector.zip" class="links">Download</a>
+		
+		<a href="http://atulmy.com" style="float: right; margin-right: 10px;" title="Portfolio of Atul Yadav">atulmy.com</a>
+		<strong style="float: right;">•</strong>
+		<a href="http://atulmy.com/?goto=labs" style="float: right;" title="Labs @ Atulmy.com - Everyday experiments!">Labs</a>
+		<strong style="float: right;">•</strong>
+		<a href="http://twitter.com/atulmy" style="float: right;" title="Atul Yadav on Twitter" target="blank">@atulmy</a>
+	</div>
+	
+	<!-- Connector HTML Start -->
+	
+	<div id="container">
+		<div id="box1" class="box" style="left: 30px; top: 190px;">
+			<div class="box_description">
+				<div class="name">Atul Yadav</div>
+				<div class="designation">Software Engineer</div>
+			</div>
+		</div>
+		<div id="box2" class="box" style="left: 350px; top: 50px;">
+			<div class="box_description">
+				<div class="name">Atul Yadav</div>
+				<div class="designation">Web Developer</div>
+			</div>
+		</div>
+		<div id="box3" class="box" style="left: 550px; top: 190px;">
+			<div class="box_description">
+				<div class="name">Atul Yadav</div>
+				<div class="designation">Jr. Web Developer</div>
+			</div>
+		</div>
+		<div id="box4" class="box" style="left: 750px; top: 330px;">
+			<div class="box_description">
+				<div class="name">Atul Yadav</div>
+				<div class="designation">Trainee</div>
+			</div>
+		</div>
+	</div>
+	<!-- Connector HTML End -->
+	
+	<div>
+<pre>
+	USAGE:
+	
+	Include Jquery file
+	&lt;script src="jquery.min.js"&gt;&lt;/script&gt;
+	
+	Include Connector Plugin file
+	&lt;script src="jquery.connector_html5.js"&gt;&lt;/script&gt;
+	
+	Onload Script
+	&lt;script&gt;
+		$( function() {
+			$('#container').connector({
+				connectFrom: '#box1', 
+				connectTo: '#box2'
+			});
+		});
+	&lt;/script&gt;
+	
+	Where
+	connectFrom = ID or Class of Box FROM which you need to connect the path
+	connectTo = ID or Class of Box TO which you need to connect the path
+	'#container' = All paths will be drawn inside this element
+	
+	Optional parameters
+	connectColor: '#ccc'  (sets color of the connecting curve path)
+	connectSize: 5  (sets the thickness of the path)
+	
+	Using &lt;canvas&gt; tag and Bezier Curve function, we get these smooth curves in case of HTML5 version of Connector.
+	
+</pre>
+	</div>
+	
+	<script type="text/javascript">
+		// Google Analytics
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19175986-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+	
+</body>
+</html>
